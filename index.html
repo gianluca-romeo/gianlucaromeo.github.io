@@ -3,375 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nome Cognome | Academic Homepage</title>
-  <meta name="description" content="Pagina personale accademica di Nome Cognome" />
+  <title>Gianluca Romeo</title>
   <style>
     :root {
-      --bg: #f5f7fa;
-      --surface: #ffffff;
-      --text: #1f2937;
-      --muted: #5b6472;
-      --line: #d9e0e8;
-      --accent: #1f4b99;
-      --accent-soft: #eaf1ff;
-      --max: 1020px;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --accent: #0071e3;
+      --line: #e5e5ea;
+      --max: 900px;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
+    .container {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 40px 20px 60px;
     }
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding: 14px 0 24px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
-
-    .nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 0.98rem;
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 32px;
-      align-items: start;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
+      align-items: center;
     }
 
-    .portrait {
+    .photo {
       width: 100%;
-      aspect-ratio: 1 / 1.2;
+      border-radius: 16px;
       object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #e8edf4;
-    }
-
-    h1, h2, h3 {
-      line-height: 1.25;
-      margin-top: 0;
-      color: #162033;
     }
 
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
+      font-weight: 600;
     }
 
     .subtitle {
       color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 18px;
-    }
-
-    .highlight {
-      display: inline-block;
-      background: var(--accent-soft);
-      color: var(--accent);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.92rem;
       margin-bottom: 16px;
     }
 
-    .quick-links {
+    p {
+      margin: 0 0 12px;
+    }
+
+    .links {
+      margin-top: 16px;
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
-      margin-top: 18px;
     }
 
-    .button {
-      display: inline-block;
-      border: 1px solid var(--line);
-      background: #fff;
+    .btn {
       padding: 10px 14px;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 0.95rem;
+      border: 1px solid var(--line);
+      background: white;
+      text-decoration: none;
+      color: var(--text);
     }
 
-    .button.primary {
+    .btn.primary {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 24px;
+    .section {
       margin-top: 24px;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
-    .section-title {
-      font-size: 1.35rem;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .news-list,
-    .pub-list,
-    .simple-list {
+    ul {
+      padding-left: 18px;
       margin: 0;
-      padding-left: 20px;
     }
 
-    .pub-list li,
-    .news-list li,
-    .simple-list li {
-      margin-bottom: 14px;
-    }
-
-    .meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    li {
+      margin-bottom: 8px;
     }
 
     footer {
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.95rem;
+      margin-top: 30px;
       text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 850px) {
-      .hero,
-      .grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 700px) {
       .hero {
-        padding: 22px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
+        grid-template-columns: 1fr;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="topbar">
-      <div class="brand">Nome Cognome</div>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <div class="container">
+    <div class="card">
+      <div class="hero">
+        <img class="photo" src="https://via.placeholder.com/400x500" alt="Foto" />
+        <div>
+          <h1>Gianluca Romeo</h1>
+          <div class="subtitle">Studente · [Università] · [Città]</div>
+          <p>
+            Sono uno studente interessato a <strong>[campo 1]</strong>, <strong>[campo 2]</strong> e <strong>[campo 3]</strong>.
+          </p>
+          <p>
+            Mi piace lavorare su progetti legati a [interesse], [interesse] e [interesse].
+          </p>
 
-    <section class="hero" id="about">
-      <img
-        class="portrait"
-        src="https://via.placeholder.com/500x600.png?text=Your+Photo"
-        alt="Ritratto di Nome Cognome"
-      />
-
-      <div>
-        <div class="highlight">Assistant Professor / PhD Candidate / Researcher</div>
-        <h1>Nome Cognome</h1>
-        <div class="subtitle">
-          Dipartimento di [Nome Dipartimento] · [Nome Università] · [Città, Paese]
-        </div>
-
-        <p>
-          Sono una/uno <strong>ricercatrice/ricercatore</strong> che si occupa di
-          <strong>[area di ricerca 1]</strong>, <strong>[area di ricerca 2]</strong> e
-          <strong>[area di ricerca 3]</strong>. Il mio lavoro esplora il rapporto tra
-          [tema], [tema] e [tema], con particolare attenzione a [focus specifico].
-        </p>
-
-        <p>
-          In questa pagina trovi una panoramica delle mie attività di ricerca,
-          pubblicazioni, insegnamento e contatti.
-        </p>
-
-        <div class="quick-links">
-          <a class="button primary" href="#publications">View Publications</a>
-          <a class="button" href="#contact">Contact</a>
-          <a class="button" href="#">CV PDF</a>
-          <a class="button" href="#">Google Scholar</a>
+          <div class="links">
+            <a class="btn primary" href="#">Contattami</a>
+            <a class="btn" href="#">GitHub</a>
+            <a class="btn" href="#">LinkedIn</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <div class="grid">
-      <main>
-        <section class="card" id="research">
-          <h2 class="section-title">Research Interests</h2>
-          <p>
-            I miei interessi di ricerca includono [argomento 1], [argomento 2],
-            [argomento 3] e [argomento 4]. Sono particolarmente interessata/o a come
-            questi temi si intrecciano con [metodologia, applicazione o prospettiva].
-          </p>
-          <ul class="simple-list">
-            <li>[Research topic / keyword 1]</li>
-            <li>[Research topic / keyword 2]</li>
-            <li>[Research topic / keyword 3]</li>
-            <li>[Research topic / keyword 4]</li>
-          </ul>
-        </section>
+      <div class="section">
+        <h2>About</h2>
+        <p>
+          Scrivi qui una breve descrizione di te: cosa studi, cosa ti interessa e che tipo di percorso vuoi fare.
+        </p>
+      </div>
 
-        <section class="card" id="publications" style="margin-top: 24px;">
-          <h2 class="section-title">Selected Publications</h2>
-          <ol class="pub-list">
-            <li>
-              <strong>Nome Cognome</strong>, Coautore Nome (2026). 
-              <a href="#">Titolo dell'articolo o del paper</a>. 
-              <em>Journal Name</em>, 12(3), 45–67.
-              <div class="meta">Keywords: [keyword], [keyword], [keyword]</div>
-            </li>
-            <li>
-              <strong>Nome Cognome</strong> (2025). 
-              <a href="#">Titolo della pubblicazione</a>. 
-              <em>Conference / Journal Name</em>.
-              <div class="meta">Best paper nominee / open access / preprint available</div>
-            </li>
-            <li>
-              Coautore Nome, <strong>Nome Cognome</strong> (2024). 
-              <a href="#">Titolo del capitolo o articolo</a>. 
-              <em>Editore o Rivista</em>.
-              <div class="meta">DOI / arXiv / project page</div>
-            </li>
-          </ol>
-        </section>
+      <div class="section">
+        <h2>Interessi</h2>
+        <ul>
+          <li>[Interesse 1]</li>
+          <li>[Interesse 2]</li>
+          <li>[Interesse 3]</li>
+        </ul>
+      </div>
 
-        <section class="card" id="teaching" style="margin-top: 24px;">
-          <h2 class="section-title">Teaching</h2>
-          <div class="two-col">
-            <div>
-              <h3>Courses</h3>
-              <ul class="simple-list">
-                <li>[Nome corso], [Università], 2025–2026</li>
-                <li>[Nome corso], [Università], 2024–2025</li>
-                <li>[Seminar / workshop title]</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Supervision</h3>
-              <ul class="simple-list">
-                <li>[Tesi / student project 1]</li>
-                <li>[Tesi / student project 2]</li>
-                <li>[Lab / mentoring activity]</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-      </main>
+      <div class="section">
+        <h2>Progetti</h2>
+        <ul>
+          <li><a href="#">Nome progetto</a> – breve descrizione</li>
+          <li><a href="#">Nome progetto</a> – breve descrizione</li>
+        </ul>
+      </div>
 
-      <aside>
-        <section class="card">
-          <h2 class="section-title">News</h2>
-          <ul class="news-list">
-            <li>
-              <strong>Apr 2026</strong> — Presentazione del paper presso [Conference Name].
-            </li>
-            <li>
-              <strong>Jan 2026</strong> — Avvio del nuovo progetto su [topic].
-            </li>
-            <li>
-              <strong>Oct 2025</strong> — Corso [course name] attivo nel semestre autunnale.
-            </li>
-          </ul>
-        </section>
-
-        <section class="card" id="contact" style="margin-top: 24px;">
-          <h2 class="section-title">Contact</h2>
-          <p>
-            <strong>Email:</strong><br />
-            <a href="mailto:nome.cognome@universita.it">nome.cognome@universita.it</a>
-          </p>
-          <p>
-            <strong>Office:</strong><br />
-            Department of [Name]<br />
-            [University Name]<br />
-            [Street / Building / Room]
-          </p>
-          <p>
-            <strong>Profiles:</strong><br />
-            <a href="#">Google Scholar</a><br />
-            <a href="#">ORCID</a><br />
-            <a href="#">LinkedIn</a><br />
-            <a href="#">GitHub</a>
-          </p>
-        </section>
-
-        <section class="card" style="margin-top: 24px;">
-          <h2 class="section-title">Short Bio</h2>
-          <p>
-            Nome Cognome è [ruolo] presso [istituzione]. Ha conseguito [titolo]
-            in [disciplina] presso [università]. I suoi interessi includono
-            [temi principali].
-          </p>
-        </section>
-      </aside>
     </div>
 
     <footer>
-      © 2026 Nome Cognome · Last updated: April 2026
+      © 2026 Nome Cognome
     </footer>
   </div>
 </body>
